@@ -24,7 +24,7 @@ func init() {
 }
 
 func day_one(cmd *cobra.Command, args []string) {
-	f, err := os.Open("inputs/1p1.txt")
+	f, err := os.Open("inputs/1.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
