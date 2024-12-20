@@ -1,2 +1,5 @@
 bin
 vendor
+
+# Puzzle inputs for each AoC problem:
+/inputs/
