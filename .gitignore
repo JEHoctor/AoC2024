@@ -3,3 +3,6 @@ vendor
 
 # Puzzle inputs for each AoC problem:
 /inputs/
+
+# Python virtual environment used with the day templating script:
+/.inflect-venv/

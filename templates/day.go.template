@@ -1,0 +1,42 @@
+package cmd
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+
+	"github.com/spf13/cobra"
+)
+
+var _{{DAY_NUMERAL}}Cmd = &cobra.Command{
+	Use:   "{{DAY_NUMERAL}}",
+	Short: "{{PUZZLE_NAME}}",
+	Long:  `Advent of Code day {{DAY_NUMBER}}: {{PUZZLE_NAME}}`,
+	Run:   day_{{DAY_NUMBER}},
+}
+
+func init() {
+	rootCmd.AddCommand(_{{DAY_NUMERAL}}Cmd)
+}
+
+func day_{{DAY_NUMBER}}(cmd *cobra.Command, args []string) {
+	f, err := os.Open("inputs/{{DAY_NUMERAL}}.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	scanner := bufio.NewScanner(f)
+
+	lines := []string{}
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+
+	total := 0
+	fmt.Println("Part one:", total)
+
+	total_two := 0
+	fmt.Println("Part two:", total_two)
+}
