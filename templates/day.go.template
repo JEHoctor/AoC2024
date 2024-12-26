@@ -13,14 +13,14 @@ var _{{DAY_NUMERAL}}Cmd = &cobra.Command{
 	Use:   "{{DAY_NUMERAL}}",
 	Short: "{{PUZZLE_NAME}}",
 	Long:  `Advent of Code day {{DAY_NUMBER}}: {{PUZZLE_NAME}}`,
-	Run:   day_{{DAY_NUMBER}},
+	Run:   day_{{DAY_NUMBER_WITH_UNDERSCORES}},
 }
 
 func init() {
 	rootCmd.AddCommand(_{{DAY_NUMERAL}}Cmd)
 }
 
-func day_{{DAY_NUMBER}}(cmd *cobra.Command, args []string) {
+func day_{{DAY_NUMBER_WITH_UNDERSCORES}}(cmd *cobra.Command, args []string) {
 	f, err := os.Open("inputs/{{DAY_NUMERAL}}.txt")
 	if err != nil {
 		log.Fatal(err)
